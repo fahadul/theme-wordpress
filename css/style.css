@@ -1,0 +1,87 @@
+/* HTML & BODY */
+
+html {
+    display: block;
+}
+
+body {
+    color: azure;
+}
+
+
+/* *****HEADER***** */
+
+.header {
+    background: url("/img/banner.png");
+     max-height: 100vh; 
+}
+
+.sb-banner {
+    color: #ffffff;
+    float: right;
+    margin: 2vh 0vw 0vh 2vw;
+    width: 30vw;
+    height: 60vh;
+    vertical-align: bottom;
+    
+}
+
+.sb-img-banner {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 70%;
+    max-width: 70%;
+    margin-left: 12vw;
+}
+
+.sb-banner-cover {
+    padding: 0vh 4vw 0vh 4vw;
+}
+
+.sb-banner-image {}
+
+
+/* *****NAVBAR**** */
+
+.sb-btn-1 {
+    border-color: #fff;
+    color: #fff;
+}
+
+.navbar {
+    opacity: 1;
+    color: azure;
+}
+
+.navbar-nav {
+    margin-left: 60vw;
+}
+
+.sb-nav {
+    color: #fff;
+}
+
+
+/* *****SECTION**** */
+
+.section {
+    color: #000;
+    height: 100vh;
+    padding: 5vh 5vw 0vh 5vw;
+    background: url("/img/socialbuddy_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.section .heading {
+    text-align: center;
+    width: 60vw;
+}
+
+.section p {
+    font-size: 2vh;
+}
+.sb-card1 {
+    background-color:green;
+}
