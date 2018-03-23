@@ -1,41 +1,109 @@
 /* HTML & BODY */
 
 html {
-    display: block;
+    height: 100%;
 }
 
 body {
-    color: azure;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/**
+ * This selector rules ensure that
+ * Flexbox on 'body' doesn't
+ * break the layout
+ * on OP pages
+ */
+
+body>.container {
+    margin: 0;
+    align-self: stretch;
+}
+
+body.op-navbar-fixed .page-container {
+    padding-top: 100px;
+}
+
+body.op-navbar-fixed-header-style-with-tagline .page-container,
+body.op-navbar-fixed-header-style-centered .page-container {
+    padding-top: 160px;
+}
+
+.page-container {
+    flex: 1;
+}
+
+a {
+    color: #ffffff;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #9b37ec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 
 /* *****HEADER***** */
 
 .header {
-    background: url("/img/banner.png");
-     max-height: 100vh; 
+    background: url("../img/banner.png");
+    max-height: auto;
 }
 
 .sb-banner {
     color: #ffffff;
-    float: right;
-    margin: 2vh 0vw 0vh 2vw;
-    width: 30vw;
-    height: 60vh;
-    vertical-align: bottom;
-    
+    position: absolute;
 }
 
 .sb-img-banner {
     display: inline-block;
     vertical-align: middle;
-    max-height: 70%;
-    max-width: 70%;
-    margin-left: 12vw;
+    height: 40em;
+    /* max-height: 70%;
+    max-width: 70%; */
+    /* margin-left: 12vw; */
+}
+
+@media (max-width: 700px) {
+    .sb-img-banner {
+        height: 20em;
+        margin-left: 8em;
+    }
 }
 
 .sb-banner-cover {
-    padding: 0vh 4vw 0vh 4vw;
+    /* float: right;
+    padding: ; */
+}
+
+.jumbotron {
+    background: transparent;
+    float: right;
+    padding-top: 10em;
+    color: #ffffff;
 }
 
 .sb-banner-image {}
@@ -48,14 +116,31 @@ body {
     color: #fff;
 }
 
+.sb-btn-1:hover {
+    border-color: #9345b8;
+    background-color: slateblue;
+}
+
+.sb-btn2 {
+    border-color: #791da3;
+    background: linear-gradient(to right, #6f00ff, #b700ff);
+}
+
+.sb-btn2:hover {
+    border-color: #9345b8;
+    /* background-color: slateblue; */
+    background: transparent;
+}
+
 .navbar {
-    opacity: 1;
+    /* opacity: 1; */
     color: azure;
 }
 
-.navbar-nav {
+
+/* .navbar-nav {
     margin-left: 60vw;
-}
+} */
 
 .sb-nav {
     color: #fff;
@@ -64,24 +149,200 @@ body {
 
 /* *****SECTION**** */
 
-.section {
+.sb-section {
     color: #000;
-    height: 100vh;
-    padding: 5vh 5vw 0vh 5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    /* background-position: center; */
+}
+
+.sb-container {
+    padding: 0 40px;
+    margin: 3em auto;
+}
+
+#sb-banner {}
+
+#sb-section2 {
     background: url("/img/socialbuddy_bg.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-.section .heading {
-    text-align: center;
-    width: 60vw;
+.sb-card1 {
+    background-color: green;
 }
 
-.section p {
-    font-size: 2vh;
+
+/* SECTION2 */
+
+.sb-explain {
+    background: #9d9b9e;
+    height: 21em;
+    max-width: 18em;
+    margin: 5em 1em 0em 1em;
 }
-.sb-card1 {
-    background-color:green;
+
+#sb-explain {
+    padding: 2em 0em 1em 0em;
+}
+
+@media(max-width:700px) {
+    #sb-explain {
+        margin-left: 4em;
+    }
+}
+
+
+/* SECTION CAROUSEL */
+
+.section2 {
+    color: #000;
+    height: auto;
+    /* padding: 5vh 0vw 0vh 0vw; */
+    background: url("../img/round_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#sb-carousel-sect {
+    background: url("../img/round_bg.png");
+    background-size: contain;
+    background-position: center;
+}
+
+
+/* Carousel */
+
+.sb-carousel {
+    margin: 5em 0em 5em 0em;
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+.carousel-item:hover {
+    background: url("../img/phone.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+}
+
+.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+
+/* @media(max-height:700px){
+    .carousel-item{
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+} */
+
+
+/* SECTION-3 */
+
+#sb-dialog {
+    padding: 1em 1em 7em 1em;
+}
+
+
+/* CLIENTS */
+
+#sb-clients {
+    padding: 1em 1em 1em 1em;
+    background: url("../img/map.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: url("../img/footer_image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sb-footer-nav {
+    color: #ffffff;
+}
+
+
+/* ICON */
+
+.icon-info:before {
+    content: "\e906";
+    color: #000;
+}
+
+.icon-instagram:before {
+    content: "\e907";
+    color: #000;
+}
+
+.icon-mail:before {
+    content: "\e908";
+    color: #000;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url("/icon/fonts/icomoon.eot");
+    src: url("/icon/fonts/icomoon.ttf");
+    src: url("/icon/fonts/icomoon.svg");
+    src: url("/icon/fonts/icomoon.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* SUMMERY */
+
+.fact {
+    background: url("/img/fact_bg.png");
+    max-height: 100%;
+    display: flex;
+}
+
+
+/* CLIENTS */
+
+.clients {
+    background: url("/img/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
