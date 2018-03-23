@@ -55,14 +55,18 @@ h5,
 h6 {
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+p{
+    color: #2e2e2e;
+}
 
 hr {
     display: block;
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: 8em auto 1em;
     padding: 0;
+    max-width: 75%;
 }
 
 
@@ -124,6 +128,16 @@ hr {
 .sb-btn2 {
     border-color: #791da3;
     background: linear-gradient(to right, #6f00ff, #b700ff);
+    border-radius: 2px;
+    min-width: 14em;
+    min-height: 3em;
+}
+
+@media(max-width:700px) {
+    .sb-btn2 {
+        min-width: 10em;
+        min-height: 2em;
+    }
 }
 
 .sb-btn2:hover {
@@ -179,10 +193,11 @@ hr {
 /* SECTION2 */
 
 .sb-explain {
-    background: #9d9b9e;
+    background: #ffffff;
     height: 21em;
     max-width: 18em;
     margin: 5em 1em 0em 1em;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
 }
 
 #sb-explain {
@@ -260,7 +275,7 @@ hr {
 /* SECTION-3 */
 
 #sb-dialog {
-    padding: 1em 1em 7em 1em;
+    padding: 1em 1em 1em 1em;
 }
 
 
@@ -272,6 +287,13 @@ hr {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.sb-card {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    margin: 1em 2em 1em 0em;
+    max-width: 20em;
+    background: #ffffff;
 }
 
 
